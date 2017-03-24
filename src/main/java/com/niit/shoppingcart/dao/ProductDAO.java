@@ -35,6 +35,6 @@ public interface ProductDAO {
 	public Product getProductByName(String name);
 	
 	//get product by price
-	public Product getProductByPrice(int price);
+	public Product getProductByPrice(String price);
 
 }

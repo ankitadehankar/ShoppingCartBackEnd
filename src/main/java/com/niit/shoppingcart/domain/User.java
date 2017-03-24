@@ -1,13 +1,10 @@
 package com.niit.shoppingcart.domain;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 
-import org.apache.commons.io.filefilter.FalseFileFilter;
-import org.hibernate.annotations.Generated;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.stereotype.Component;
 
@@ -16,6 +13,7 @@ import org.springframework.stereotype.Component;
 public class User {
 	
 	@Id
+	@NotEmpty(message = "Please Enter Your id")
 	private String id;
 	
 	@NotEmpty(message = "Please Enter Your Name")
@@ -26,6 +24,7 @@ public class User {
 	
 	@Min(5)
 	@Max(10)
+	@NotEmpty(message = "Please Enter Password")
 	private String password;
 	private String contact;
 	private String role;

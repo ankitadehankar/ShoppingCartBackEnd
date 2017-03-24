@@ -19,19 +19,11 @@ public class CategoryDAOImpl  implements CategoryDAO{
 	@Autowired
 	private SessionFactory sessionFactory;
 	
-	
-	
-	//CategoryDAOImpl c = new CategoryDAOImpl
-	
-	@Autowired
 	public CategoryDAOImpl(SessionFactory sessionFactory)
 	{
 		this.sessionFactory = sessionFactory;
 	}
 	
-	
-	
-
 	public List<Category> list() {
 		//select * from category  -SQL Query - mention the table name
 		//from Category  -> HQL -mention Domain class name not table name

@@ -41,7 +41,7 @@ public class ProductTestCase {
 	{
 		product.setId("p06");
 		product.setName("Green Casuals");
-		product.setPrice(2500);
+		product.setPrice("2500");
 		
 		boolean flag = productDAO.save(product);
 		
@@ -55,7 +55,7 @@ public class ProductTestCase {
 	{
 		product.setId("p03");
 		product.setName("Hight Casuals");
-		product.setPrice(1900);
+		product.setPrice("1900");
 
 		boolean flag = productDAO.update(product);
 		
@@ -107,7 +107,7 @@ public class ProductTestCase {
 	@Test
 	public void getProductByPriceTestCase()
 	{
-		product = productDAO.getProductByPrice(2500);
+		product = productDAO.getProductByPrice("2500");
 		
 		Assert.assertEquals(null, "product");
 	}

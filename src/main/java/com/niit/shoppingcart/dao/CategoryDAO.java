@@ -1,7 +1,6 @@
 package com.niit.shoppingcart.dao;
 
 import java.util.List;
-
 import com.niit.shoppingcart.domain.Category;
 
 public interface CategoryDAO {

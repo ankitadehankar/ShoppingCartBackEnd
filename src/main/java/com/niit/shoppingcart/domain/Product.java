@@ -3,11 +3,13 @@ package com.niit.shoppingcart.domain;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
 
 @Entity
 @Component
+@Table(name="PRODUCT")
 public class Product {
 
 	@Id
@@ -15,7 +17,7 @@ public class Product {
 	
 	private String name;
 	
-	private int price;
+	private String price;
 
 	public String getId() {
 		return id;
@@ -34,11 +36,11 @@ public class Product {
 		this.name = name;
 	}
 
-	public int getPrice() {
+	public String getPrice() {
 		return price;
 	}
 
-	public void setPrice(int price) {
+	public void setPrice(String price) {
 		this.price = price;
 	}
 	

@@ -34,6 +34,7 @@ public class UserDAOImpl implements UserDAO {
 	}
 	
 
+	@SuppressWarnings("unchecked")
 	public List<User> list() {
 		
 			return sessionFactory.getCurrentSession().createQuery("from User").list();
@@ -63,6 +64,7 @@ public class UserDAOImpl implements UserDAO {
 			return false;
 		}
 	}
+	
 
 	public boolean validate(String id, String password) {
 		
@@ -72,9 +74,9 @@ public class UserDAOImpl implements UserDAO {
         if(sessionFactory.getCurrentSession().createQuery(hql).uniqueResult() == null){
         	return false;
         } else {
-			return true;
+        	return true;
 		}
-	
+			
 	}
 
 

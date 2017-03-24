@@ -25,5 +25,5 @@ public interface UserDAO {
 	// for user name and password is correct or not to check this we need validate methode.
 	
 	public boolean validate(String id, String password);
-	
+
 }

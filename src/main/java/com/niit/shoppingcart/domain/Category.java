@@ -1,11 +1,13 @@
 package com.niit.shoppingcart.domain;
 
+import java.util.Set;
+
 import javax.persistence.*;
 
 import org.springframework.stereotype.Component;
 
 @Entity
-@Table(name="CATEGORY")  //if the class name and table name is different
+@Table(name="Category")//if the class name and table name is different
 @Component               //if want to create instance of Class Category  - category
 public class Category {
 	
@@ -19,7 +21,21 @@ public class Category {
 	private String name;
 	
 	private String description;
+	
+	/*private Set<Product> products;
+	
+	@Column(name="Product")
+	@OneToMany(mappedBy="Category",fetch=FetchType.EAGER)
+	public Set<Product> getProducts(){
+			return products;
+	}
 
+	public void setProducts(Set<Product> products) {
+		this.products = products;
+	}*/
+	
+	@Id
+	@Column(name="Id")
 	public String getId() {
 		return id;
 	}
@@ -44,4 +60,6 @@ public class Category {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+
+	
 }

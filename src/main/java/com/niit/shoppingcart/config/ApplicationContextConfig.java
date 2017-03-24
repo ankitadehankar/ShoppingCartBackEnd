@@ -15,12 +15,13 @@ import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.niit.shoppingcart.domain.Category;
+import com.niit.shoppingcart.domain.MyCart;
 import com.niit.shoppingcart.domain.Product;
 import com.niit.shoppingcart.domain.Supplier;
 import com.niit.shoppingcart.domain.User;
 
 @Configuration
-@ComponentScan("com.niit, com.devops")
+@ComponentScan("com.niit")
 @EnableTransactionManagement
 public class ApplicationContextConfig {
 
@@ -58,8 +59,10 @@ public class ApplicationContextConfig {
 		sessionBuilder.addProperties(getHibernateProperties()).addAnnotatedClass(Product.class);
 		sessionBuilder.addProperties(getHibernateProperties()).addAnnotatedClass(Supplier.class);
 		sessionBuilder.addProperties(getHibernateProperties()).addAnnotatedClass(User.class);
+		sessionBuilder.addProperties(getHibernateProperties()).addAnnotatedClass(MyCart.class);
+
 		
-		//sessionBuilder.setProperties(Category.class);
+		//sessionBuilder.setProperties(Category.class);   
 		
 		
 		//Alternate to above steps, you can add all domain object using following step

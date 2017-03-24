@@ -4,10 +4,8 @@ import java.util.List;
 
 import javax.transaction.Transactional;
 
-import org.hibernate.HibernateException;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import com.niit.shoppingcart.dao.ProductDAO;
@@ -15,7 +13,6 @@ import com.niit.shoppingcart.domain.Product;
 
 @Transactional
 @Repository("productDAO")
-@Component
 public class ProductDAOImpl implements ProductDAO {
 	
 
@@ -29,8 +26,9 @@ public class ProductDAOImpl implements ProductDAO {
 	}
 	
 
+	@SuppressWarnings("unchecked")
 	public List<Product> list() {
-		return sessionFactory.getCurrentSession().createQuery("from product").list();
+		return sessionFactory.getCurrentSession().createQuery("from Product").list();
 	}
 
 	public boolean save(Product product) {
@@ -93,7 +91,7 @@ public class ProductDAOImpl implements ProductDAO {
 		
 	}
 
-	public Product getProductByPrice(int price) {
+	public Product getProductByPrice(String price) {
 		System.out.println("price is: "+price);
 	   return (Product) sessionFactory.getCurrentSession().get(Product.class, price);
 	}	
